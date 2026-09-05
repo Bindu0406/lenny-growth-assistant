@@ -1,0 +1,8 @@
+Title: Casey Winters on Retention Loops and Growth Engines
+Guest: Casey Winters
+Date: 2023-08-20
+
+[00:03:10] Lenny: Casey, how should product managers think about retention versus acquisition?
+[00:03:25] Casey Winters: Most PMs visualize retention as a funnel where users drop off at each step. But great companies like Pinterest, Grubhub, and Eventbrite treat retention as a loop. Retention loops feed future acquisition. If a user retains, their activity generates content or invites that bring in the next cohorts.
+[00:06:50] Casey Winters: To improve user retention, first define your natural product frequency. Is your product daily, weekly, or monthly? For example, TurboTax is an annual product, whereas Slack is daily. Expecting daily usage for a weekly product creates toxic engagement features that ultimately drive users away.
+[00:11:20] Casey Winters: The most effective retention tactic is improving the initial aha moment during onboarding. If users do not reach core value in session one, the probability of them returning in week two drops by more than 70%.

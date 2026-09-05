@@ -1,0 +1,8 @@
+Title: Elena Verna on Product-Led Growth and Product-Led Sales
+Guest: Elena Verna
+Date: 2023-05-15
+
+[00:04:12] Lenny: Welcome Elena. Today I want to talk about retention and the interplay between product-led growth (PLG) and sales-assisted growth.
+[00:04:30] Elena Verna: Product-led growth is fundamentally an acquisition and retention engine where the product itself drives conversion. You cannot treat retention as an afterthought or a secondary metric. If your activation loop fails, retention fails immediately.
+[00:05:15] Elena Verna: When companies add sales on top of PLG, called Product-Led Sales (PLS), they often make the mistake of having sales reps reach out before the user experiences core value. Sales should only intervene to accelerate enterprise expansion or remove organizational friction, not to force onboarding.
+[00:08:45] Elena Verna: In B2B self-serve products, best-in-class monthly retention curves flatten out between 40% and 60%. If your curve does not flatten and instead trends down toward zero, you do not have product-market fit, and spending money on performance marketing is just pouring water into a leaky bucket.
