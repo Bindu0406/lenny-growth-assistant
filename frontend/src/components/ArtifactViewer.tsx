@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { X } from 'lucide-react';
+import { X, Code, FileText } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 interface ArtifactViewerProps {
   content?: string;
@@ -143,23 +144,25 @@ const WIDGET_HTML = `<!DOCTYPE html>
 
 export const ArtifactViewer: React.FC<ArtifactViewerProps> = ({
   content,
-  title = 'Retention Curve Calculator',
+  title = 'Interactive Artifact',
   onClose,
 }) => {
-  const safeContent =
-    content && content.includes('<canvas') && content.includes('getContext')
-      ? content
-      : WIDGET_HTML;
+  const isHtml = content && (content.includes('<html') || content.includes('<canvas') || content.includes('<!DOCTYPE'));
 
   return (
-    <div className="flex flex-col h-full w-full bg-white border-l border-slate-800 shadow-2xl">
-      <div className="bg-slate-900 border-b border-slate-800 px-4 py-3 flex items-center justify-between shrink-0">
+    <div className="flex flex-col h-full w-full bg-slate-900 border-l border-slate-800 shadow-2xl overflow-hidden">
+      <div className="bg-slate-950 border-b border-slate-800 px-4 py-3 flex items-center justify-between shrink-0">
         <div className="flex items-center space-x-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">
+          {isHtml ? (
+            <Code className="w-4 h-4 text-indigo-400" />
+          ) : (
+            <FileText className="w-4 h-4 text-cyan-400" />
+          )}
+          <span className="text-xs font-semibold uppercase tracking-wider text-slate-200">
             {title}
           </span>
           <span className="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-medium">
-            Interactive
+            {isHtml ? 'Interactive' : 'Framework'}
           </span>
         </div>
         {onClose && (
@@ -173,12 +176,20 @@ export const ArtifactViewer: React.FC<ArtifactViewerProps> = ({
         )}
       </div>
 
-      <iframe
-        title={title}
-        srcDoc={safeContent}
-        sandbox="allow-scripts allow-same-origin"
-        className="w-full flex-1 border-none bg-white"
-      />
+      <div className="flex-1 w-full h-full overflow-y-auto bg-slate-900">
+        {isHtml ? (
+          <iframe
+            title={title}
+            srcDoc={content && content.includes('<canvas') && content.includes('getContext') ? content : WIDGET_HTML}
+            sandbox="allow-scripts allow-same-origin"
+            className="w-full h-full min-h-[580px] border-none bg-white"
+          />
+        ) : (
+          <div className="p-6 max-w-2xl mx-auto prose prose-invert prose-sm text-slate-200">
+            <ReactMarkdown>{content || '*(No content available)*'}</ReactMarkdown>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
